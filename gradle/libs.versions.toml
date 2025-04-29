@@ -3,7 +3,7 @@ kotlin = "[2.1,3.0)"
 ktlint = "[12.1,13.0)"
 shadow = "[8.3,9.0)"
 jreleaser = "[1.16,2.0)"
-bytedecoJavacvPlatform = "[1.5,2.0)"
+wsSchild = "[3.5,4.0)"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -14,4 +14,4 @@ jreleaser = { id = "org.jreleaser", version.ref = "jreleaser" }
 [libraries]
 kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5", version.ref = "kotlin" }
 
-bytedeco-javacv-platform = { group = "org.bytedeco", name = "javacv-platform", version.ref = "bytedecoJavacvPlatform" }
+ws-schild-jave-all-deps = { group = "ws.schild", name = "jave-all-deps", version.ref = "wsSchild" }

@@ -1,3 +1,3 @@
 dependencies {
-    api(libs.bytedeco.javacv.platform) // 音视频处理工具库
+    api(libs.ws.schild.jave.all.deps) // 音视频处理工具库
 }

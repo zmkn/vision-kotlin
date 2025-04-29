@@ -5,7 +5,8 @@ enum class AudioFormat(val value: String) {
     AAC("aac"),
     WAV("wav"),
     AIFF("aiff"),
-    ALAC("alac");
+    ALAC("alac"),
+    PCM("pcm");
 
     override fun toString(): String {
         return value
