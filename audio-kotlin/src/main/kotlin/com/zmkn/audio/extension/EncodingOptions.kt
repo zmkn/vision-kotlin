@@ -10,7 +10,6 @@ fun EncodingOptions.toEncodingAttributes(
     videoAttributes: VideoAttributes? = null,
 ): EncodingAttributes = EncodingAttributes()
     .setOutputFormat(outputFormat.value)
-    .setSafe(0)
     .setLoop(loop)
     .setMapMetaData(copyMetaData)
     .also {
@@ -25,6 +24,9 @@ fun EncodingOptions.toEncodingAttributes(
         }
         if (duration != null) {
             it.setDuration(duration)
+        }
+        if (safe != null) {
+            it.setSafe(safe)
         }
         if (filterThreads != null) {
             it.setFilterThreads(filterThreads)

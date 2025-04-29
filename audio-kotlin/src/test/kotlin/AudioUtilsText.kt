@@ -39,14 +39,30 @@ class AudioUtilsText {
     }
 
     @Test
+    @Disabled
     fun testConvert() {
         println("testConvert---start")
         val inputFile1 = File("temp/1.mp3")
-        val inputFile2 = File("temp/2.mp3")
         val outputFile = File("temp/output.mp3")
         println(inputFile1.exists())
         AudioUtils.convert(
             inputFile = inputFile1,
+            outputFile = outputFile,
+            outputOptions = OutputOptions(),
+            encodingOptions = EncodingOptions(),
+        )
+        println("testConvert---end")
+    }
+
+    @Test
+    fun testConvert2() {
+        println("testConvert---start")
+        val inputFile1 = File("temp/1.mp3")
+        val inputFile2 = File("temp/2.mp3")
+        val outputFile = File("temp/output-all.mp3")
+        println(inputFile1.exists())
+        AudioUtils.convert(
+            inputFiles = listOf(inputFile1, inputFile2),
             outputFile = outputFile,
             outputOptions = OutputOptions(),
             encodingOptions = EncodingOptions(),

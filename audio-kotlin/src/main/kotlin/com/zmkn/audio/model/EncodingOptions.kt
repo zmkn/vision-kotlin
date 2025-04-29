@@ -9,6 +9,7 @@ data class EncodingOptions(
     val offset: Float? = null,
     val duration: Float? = null,
     val filterThreads: Int? = null,
+    val safe: Int? = null,
     val encodingThreads: Int? = null,
     val decodingThreads: Int? = null,
     val extraContext: Map<String, String>? = null,
