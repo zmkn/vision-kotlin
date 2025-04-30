@@ -1,7 +1,11 @@
 import com.zmkn.audio.enumeration.AudioDecoder
+import com.zmkn.audio.enumeration.AudioSampleRate
+import com.zmkn.audio.model.AudioAttributes
 import com.zmkn.audio.model.EncodingOptions
+import com.zmkn.audio.model.InputAudioFileAttributes
 import com.zmkn.audio.model.OutputOptions
 import com.zmkn.audio.util.AudioUtils
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Disabled
 import ws.schild.jave.Encoder
 import java.io.File
@@ -40,9 +44,9 @@ class AudioUtilsText {
 
     @Test
     @Disabled
-    fun testConvert() {
+    fun testConvert() = runBlocking {
         println("testConvert---start")
-        val inputFile1 = File("temp/1.mp3")
+        val inputFile1 = File("temp/1.wav")
         val outputFile = File("temp/output.mp3")
         println(inputFile1.exists())
         AudioUtils.convert(
@@ -55,9 +59,10 @@ class AudioUtilsText {
     }
 
     @Test
-    fun testConvert2() {
+    @Disabled
+    fun testConvert2() = runBlocking {
         println("testConvert---start")
-        val inputFile1 = File("temp/1.mp3")
+        val inputFile1 = File("temp/1.wav")
         val inputFile2 = File("temp/2.mp3")
         val outputFile = File("temp/output-all.mp3")
         println(inputFile1.exists())
@@ -66,6 +71,70 @@ class AudioUtilsText {
             outputFile = outputFile,
             outputOptions = OutputOptions(),
             encodingOptions = EncodingOptions(),
+        )
+        println("testConvert---end")
+    }
+
+    @Test
+    @Disabled
+    fun testConvertPcm() = runBlocking {
+        println("testConvert---start")
+        val inputFile1 = File("temp/1.pcm")
+        val outputFile = File("temp/output.pcm")
+        println(inputFile1.exists())
+        AudioUtils.convertPcm(
+            inputFile = inputFile1,
+            outputFile = outputFile,
+            inputAudioAttributes = AudioAttributes(
+                sampleRate = AudioSampleRate.R24000.number,
+            ),
+            outputAudioAttributes = AudioAttributes(
+                sampleRate = AudioSampleRate.R24000.number,
+            ),
+        )
+        println("testConvert---end")
+    }
+
+    @Test
+    @Disabled
+    fun testConvertPcm2() = runBlocking {
+        println("testConvert---start")
+        val inputFile1 = File("temp/1.pcm")
+        val outputFile = File("temp/output.pcm")
+        println(inputFile1.exists())
+        AudioUtils.convertPcm(
+            inputAudioFileAttributes = listOf(
+                InputAudioFileAttributes(
+                    file = inputFile1,
+                    audioAttributes = AudioAttributes(
+                        sampleRate = AudioSampleRate.R24000.number,
+                    )
+                ),
+                InputAudioFileAttributes(
+                    file = inputFile1,
+                    audioAttributes = AudioAttributes(
+                        sampleRate = AudioSampleRate.R24000.number,
+                    )
+                ),
+            ),
+            outputFile = outputFile,
+            outputAudioAttributes = AudioAttributes(
+                sampleRate = AudioSampleRate.R24000.number,
+            ),
+        )
+        println("testConvert---end")
+    }
+
+    @Test
+    @Disabled
+    fun testConnectPcm() = runBlocking {
+        println("testConvert---start")
+        val inputFile1 = File("temp/1.pcm")
+        val outputFile = File("temp/output.pcm")
+        println(inputFile1.exists())
+        AudioUtils.connectPcm(
+            inputFiles = listOf(inputFile1, inputFile1),
+            outputFile = outputFile,
         )
         println("testConvert---end")
     }
