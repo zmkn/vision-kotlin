@@ -482,10 +482,10 @@ allprojects {
 
     configure<org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension> {
         jvmToolchain {
-            languageVersion.set(JavaLanguageVersion.of(22))
+            languageVersion.set(JavaLanguageVersion.of(24))
         }
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_22)
+            jvmTarget.set(JvmTarget.JVM_24)
         }
     }
 
