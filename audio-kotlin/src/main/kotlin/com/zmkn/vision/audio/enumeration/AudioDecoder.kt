@@ -1,4 +1,4 @@
-package com.zmkn.audio.enumeration
+package com.zmkn.vision.audio.enumeration
 
 enum class AudioDecoder(val value: String) {
     _8SVX_EXP("8svx_exp"),

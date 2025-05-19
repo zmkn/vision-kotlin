@@ -1,8 +1,8 @@
-package com.zmkn.audio.model
+package com.zmkn.vision.audio.model
 
-import com.zmkn.audio.enumeration.AudioChannels
-import com.zmkn.audio.enumeration.AudioSampleRate
-import com.zmkn.audio.enumeration.AudioSampleSizeInBits
+import com.zmkn.vision.audio.enumeration.AudioChannels
+import com.zmkn.vision.audio.enumeration.AudioSampleRate
+import com.zmkn.vision.audio.enumeration.AudioSampleSizeInBits
 import javax.sound.sampled.AudioFormat
 
 data class AudioAttributes(

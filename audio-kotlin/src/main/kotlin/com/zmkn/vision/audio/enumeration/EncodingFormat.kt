@@ -1,4 +1,4 @@
-package com.zmkn.audio.enumeration
+package com.zmkn.vision.audio.enumeration
 
 enum class EncodingFormat(val value: String) {
     _3G2("3g2"),

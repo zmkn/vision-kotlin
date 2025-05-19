@@ -1,6 +1,6 @@
-package com.zmkn.audio.model
+package com.zmkn.vision.audio.model
 
-import com.zmkn.audio.enumeration.EncodingFormat
+import com.zmkn.vision.audio.enumeration.EncodingFormat
 
 data class EncodingOptions(
     val outputFormat: EncodingFormat = EncodingFormat.MP3,

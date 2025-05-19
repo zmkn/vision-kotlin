@@ -1,4 +1,4 @@
-package com.zmkn.audio.enumeration
+package com.zmkn.vision.audio.enumeration
 
 enum class DecodingFormat(val value: String) {
     _3DOSTR("3dostr"),

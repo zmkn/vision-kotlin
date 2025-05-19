@@ -1,10 +1,10 @@
-import com.zmkn.audio.enumeration.AudioDecoder
-import com.zmkn.audio.enumeration.AudioSampleRate
-import com.zmkn.audio.model.AudioAttributes
-import com.zmkn.audio.model.EncodingOptions
-import com.zmkn.audio.model.InputAudioFileAttributes
-import com.zmkn.audio.model.OutputOptions
-import com.zmkn.audio.util.AudioUtils
+import com.zmkn.vision.audio.enumeration.AudioDecoder
+import com.zmkn.vision.audio.enumeration.AudioSampleRate
+import com.zmkn.vision.audio.model.AudioAttributes
+import com.zmkn.vision.audio.model.EncodingOptions
+import com.zmkn.vision.audio.model.InputAudioFileAttributes
+import com.zmkn.vision.audio.model.OutputOptions
+import com.zmkn.vision.audio.util.AudioUtils
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Disabled
 import ws.schild.jave.Encoder

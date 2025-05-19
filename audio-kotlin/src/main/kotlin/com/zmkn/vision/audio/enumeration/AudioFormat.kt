@@ -1,4 +1,4 @@
-package com.zmkn.audio.enumeration
+package com.zmkn.vision.audio.enumeration
 
 enum class AudioFormat(val value: String) {
     MP3("mp3"),

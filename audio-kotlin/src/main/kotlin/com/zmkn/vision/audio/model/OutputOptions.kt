@@ -1,9 +1,9 @@
-package com.zmkn.audio.model
+package com.zmkn.vision.audio.model
 
-import com.zmkn.audio.enumeration.AudioBitrate
-import com.zmkn.audio.enumeration.AudioChannels
-import com.zmkn.audio.enumeration.AudioEncoder
-import com.zmkn.audio.enumeration.AudioSampleRate
+import com.zmkn.vision.audio.enumeration.AudioBitrate
+import com.zmkn.vision.audio.enumeration.AudioChannels
+import com.zmkn.vision.audio.enumeration.AudioEncoder
+import com.zmkn.vision.audio.enumeration.AudioSampleRate
 
 data class OutputOptions(
     val codec: AudioEncoder = AudioEncoder.LIBMP3LAME,

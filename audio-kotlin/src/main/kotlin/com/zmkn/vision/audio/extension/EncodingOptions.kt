@@ -1,6 +1,6 @@
-package com.zmkn.audio.extension
+package com.zmkn.vision.audio.extension
 
-import com.zmkn.audio.model.EncodingOptions
+import com.zmkn.vision.audio.model.EncodingOptions
 import ws.schild.jave.encode.AudioAttributes
 import ws.schild.jave.encode.EncodingAttributes
 import ws.schild.jave.encode.VideoAttributes

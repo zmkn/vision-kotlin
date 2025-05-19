@@ -1,12 +1,12 @@
-package com.zmkn.audio.util
+package com.zmkn.vision.audio.util
 
-import com.zmkn.audio.extension.toAudioAttributes
-import com.zmkn.audio.extension.toAudioFormat
-import com.zmkn.audio.extension.toEncodingAttributes
-import com.zmkn.audio.model.AudioAttributes
-import com.zmkn.audio.model.EncodingOptions
-import com.zmkn.audio.model.InputAudioFileAttributes
-import com.zmkn.audio.model.OutputOptions
+import com.zmkn.vision.audio.extension.toAudioAttributes
+import com.zmkn.vision.audio.extension.toAudioFormat
+import com.zmkn.vision.audio.extension.toEncodingAttributes
+import com.zmkn.vision.audio.model.AudioAttributes
+import com.zmkn.vision.audio.model.EncodingOptions
+import com.zmkn.vision.audio.model.InputAudioFileAttributes
+import com.zmkn.vision.audio.model.OutputOptions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import ws.schild.jave.Encoder

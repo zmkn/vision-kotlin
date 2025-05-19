@@ -1,4 +1,4 @@
-package com.zmkn.audio.model
+package com.zmkn.vision.audio.model
 
 import java.io.File
 

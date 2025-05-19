@@ -23,17 +23,18 @@ try {
 }
 
 val projectInfo = mapOf(
-    "vision-kotlin" to mapOf(
-        "name" to "Kotlin Vision",
-        "description" to "Vision from Zmkn",
-        "tags" to listOf("kotlin", "vision")
-    ),
     "audio-kotlin" to mapOf(
         "name" to "Kotlin Audio",
         "description" to "Audio from Zmkn",
         "tags" to listOf("kotlin", "audio")
     ),
 )
+
+group = "com.zmkn"
+
+subprojects {
+    group = "com.zmkn.vision"
+}
 
 allprojects {
     apply {
@@ -42,7 +43,6 @@ allprojects {
         plugin(rootProject.libs.plugins.shadow.get().pluginId)
     }
 
-    group = "com.zmkn"
     version = "1.0.0-SNAPSHOT"
 
     configurations.all {
@@ -55,7 +55,7 @@ allprojects {
         withSourcesJar()
     }
 
-    if (localProperties.getProperty("mavenPublish.enable") == "true") {
+    if (localProperties.getProperty("mavenPublish.enable") == "true" && project.name != rootProject.name) {
         apply {
             plugin("maven-publish")
         }
@@ -116,7 +116,7 @@ allprojects {
         }
     }
 
-    if (localProperties.getProperty("jreleaser.enable") == "true") {
+    if (localProperties.getProperty("jreleaser.enable") == "true" && project.name != rootProject.name) {
         apply {
             plugin(rootProject.libs.plugins.jreleaser.get().pluginId)
         }
@@ -277,12 +277,12 @@ allprojects {
                     // Skips creating a tag.
                     // Useful when the tag was created externally.
                     // Defaults to `false`.
-                    skipTag.set(this@allprojects.project.name != "vision-kotlin" || localProperties.getProperty("jreleaser.release.github.skipTag") == "true")
+                    skipTag.set(this@allprojects.project.name != rootProject.name || localProperties.getProperty("jreleaser.release.github.skipTag") == "true")
 
                     // Skips creating a release.
                     // Useful when release assets will be handled with an uploader.
                     // Defaults to `false`.
-                    skipRelease.set(this@allprojects.project.name != "vision-kotlin" || localProperties.getProperty("jreleaser.release.github.skipRelease") == "true")
+                    skipRelease.set(this@allprojects.project.name != rootProject.name || localProperties.getProperty("jreleaser.release.github.skipRelease") == "true")
 
                     // Signs commits with the configured credentials.
                     // The Signing section must be configured as well.
@@ -541,8 +541,4 @@ allprojects {
     dependencies {
         add("testImplementation", rootProject.libs.kotlin.test.junit5)
     }
-}
-
-dependencies {
-    api(project(":audio-kotlin"))
 }

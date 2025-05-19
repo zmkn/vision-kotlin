@@ -1,6 +1,6 @@
-package com.zmkn.audio.extension
+package com.zmkn.vision.audio.extension
 
-import com.zmkn.audio.model.AudioAttributes
+import com.zmkn.vision.audio.model.AudioAttributes
 import javax.sound.sampled.AudioFormat
 import javax.sound.sampled.AudioSystem
 

@@ -1,6 +1,6 @@
-package com.zmkn.audio.extension
+package com.zmkn.vision.audio.extension
 
-import com.zmkn.audio.model.OutputOptions
+import com.zmkn.vision.audio.model.OutputOptions
 import ws.schild.jave.encode.AudioAttributes
 import kotlin.math.roundToInt
 
