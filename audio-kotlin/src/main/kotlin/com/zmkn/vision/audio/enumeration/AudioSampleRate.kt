@@ -15,9 +15,7 @@ enum class AudioSampleRate(
     R96000("R96000", 96000),
     R192000("R192000", 192000);
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioSampleRate? {

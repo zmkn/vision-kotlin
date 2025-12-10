@@ -8,9 +8,7 @@ enum class AudioFormat(val value: String) {
     ALAC("alac"),
     PCM("pcm");
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioFormat? {

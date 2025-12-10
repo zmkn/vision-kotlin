@@ -16,9 +16,7 @@ enum class AudioBitrate(
     B256000("B256000", 256000),
     B320000("B320000", 320000);
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioBitrate? {

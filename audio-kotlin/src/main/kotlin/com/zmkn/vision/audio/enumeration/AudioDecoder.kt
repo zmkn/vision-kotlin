@@ -201,9 +201,7 @@ enum class AudioDecoder(val value: String) {
     XMA1("xma1"),
     XMA2("xma2");
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioDecoder? {

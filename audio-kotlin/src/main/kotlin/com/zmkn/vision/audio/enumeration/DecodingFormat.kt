@@ -340,9 +340,7 @@ enum class DecodingFormat(val value: String) {
     YOP("yop"),
     YUV4MPEGPIPE("yuv4mpegpipe");
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): DecodingFormat? {

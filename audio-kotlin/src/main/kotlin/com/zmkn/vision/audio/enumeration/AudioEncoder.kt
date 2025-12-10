@@ -82,9 +82,7 @@ enum class AudioEncoder(val value: String) {
     WMAV1("wmav1"),
     WMAV2("wmav2");
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioEncoder? {

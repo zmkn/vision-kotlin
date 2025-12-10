@@ -10,9 +10,7 @@ enum class AudioSampleSizeInBits(
     B32("B32", 32),
     B64("B64", 64);
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioSampleSizeInBits? {

@@ -173,9 +173,7 @@ enum class EncodingFormat(val value: String) {
     WV("wv"),
     YUV4MPEGPIPE("yuv4mpegpipe");
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): EncodingFormat? {

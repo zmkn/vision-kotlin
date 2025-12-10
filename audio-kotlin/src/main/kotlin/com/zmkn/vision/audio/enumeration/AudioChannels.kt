@@ -7,9 +7,7 @@ enum class AudioChannels(
     MONO("MONO", 1),
     STEREO("STEREO", 2);
 
-    override fun toString(): String {
-        return value
-    }
+    override fun toString(): String = value
 
     companion object {
         fun fromValue(value: String): AudioChannels? {
