@@ -3,6 +3,7 @@ package com.zmkn.vision.audio.util
 import com.zmkn.vision.audio.extension.toAudioAttributes
 import com.zmkn.vision.audio.extension.toAudioFormat
 import com.zmkn.vision.audio.extension.toEncodingAttributes
+import com.zmkn.vision.audio.filter.VolumeFilter
 import com.zmkn.vision.audio.model.AudioAttributes
 import com.zmkn.vision.audio.model.EncodingOptions
 import com.zmkn.vision.audio.model.InputAudioFileAttributes
@@ -44,7 +45,9 @@ object AudioUtils {
         val multimediaObjects = inputFiles.map {
             MultimediaObject(it)
         }
-        val filterChain = FilterChain().addFilter(MediaConcatFilter(multimediaObjects.size, false, true))
+        val filterChain = FilterChain()
+            .addFilter(MediaConcatFilter(multimediaObjects.size, false, true))
+            .addFilter(VolumeFilter(outputOptions.volumeMultiple))
         val filterGraph = FilterGraph().addChain(filterChain)
         val videoAttributes = VideoAttributes().setComplexFiltergraph(filterGraph)
         val encodingAttributes = encodingOptions.toEncodingAttributes(

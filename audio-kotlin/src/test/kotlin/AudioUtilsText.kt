@@ -58,8 +58,8 @@ class AudioUtilsText {
         println("testConvert---end")
     }
 
-    @Test
     @Disabled
+    @Test
     fun testConvert2() = runBlocking {
         println("testConvert---start")
         val inputFile1 = File("temp/1.wav")
@@ -100,7 +100,7 @@ class AudioUtilsText {
     fun testConvertPcm2() = runBlocking {
         println("testConvert---start")
         val inputFile1 = File("temp/1.pcm")
-        val outputFile = File("temp/output.pcm")
+        val outputFile = File("temp/output2.pcm")
         println(inputFile1.exists())
         AudioUtils.convertPcm(
             inputAudioFileAttributes = listOf(
@@ -130,7 +130,7 @@ class AudioUtilsText {
     fun testConnectPcm() = runBlocking {
         println("testConvert---start")
         val inputFile1 = File("temp/1.pcm")
-        val outputFile = File("temp/output.pcm")
+        val outputFile = File("temp/output3.pcm")
         println(inputFile1.exists())
         AudioUtils.connectPcm(
             inputFiles = listOf(inputFile1, inputFile1),
